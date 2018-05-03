@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "377198869919",
+    "firebase_url": "https://eveningsnacks-35941.firebaseio.com",
+    "project_id": "eveningsnacks-35941",
+    "storage_bucket": "eveningsnacks-35941.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377198869919:android:77be287975fbc8f3",
+        "android_client_info": {
+          "package_name": "com.bdjobs.eveningsnacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377198869919-t85dmdpkn1q7ajqpjlqnoi84t3uo4ivb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bdjobs.eveningsnacks",
+            "certificate_hash": "133ee65e869c1501e08a6183f1453acf82463975"
+          }
+        },
+        {
+          "client_id": "377198869919-vske59l6lf4b2qh1o5mtgq4pvnkuqj4s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bdjobs.eveningsnacks",
+            "certificate_hash": "a3bf4ff274cb15ef971193818d5894fb014d27a7"
+          }
+        },
+        {
+          "client_id": "377198869919-6dv2ha7qtcunpasqfcg4iid1r2ocl3ej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnpIw_EoQn4nK6JS9YVwg6uqR08v6PE6s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377198869919-6dv2ha7qtcunpasqfcg4iid1r2ocl3ej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377198869919:android:1dfa844b4f48ab2a",
+        "android_client_info": {
+          "package_name": "eveningsnacks.bdjobs.com.eveningsnacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377198869919-djcqct9ul713hi90j3hbvjv3nqonlmb4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eveningsnacks.bdjobs.com.eveningsnacks",
+            "certificate_hash": "133ee65e869c1501e08a6183f1453acf82463975"
+          }
+        },
+        {
+          "client_id": "377198869919-6dv2ha7qtcunpasqfcg4iid1r2ocl3ej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnpIw_EoQn4nK6JS9YVwg6uqR08v6PE6s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377198869919-6dv2ha7qtcunpasqfcg4iid1r2ocl3ej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

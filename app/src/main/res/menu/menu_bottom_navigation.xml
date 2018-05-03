@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/todaysMenu"
+        android:enabled="true"
+        android:icon="@drawable/ic_cooking_pot"
+        android:title="Menu"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/myOrder"
+        android:enabled="true"
+        android:icon="@drawable/ic_pizza"
+        android:title="My order"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/clgOrder"
+        android:enabled="true"
+        android:icon="@drawable/ic_tray"
+        android:title="Clg order"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/allOrders"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu"
+        android:title="All orders"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/orderSummary"
+        android:enabled="true"
+        android:icon="@drawable/ic_popcorn"
+        android:title="Summary"
+        app:showAsAction="always" />
+</menu>
