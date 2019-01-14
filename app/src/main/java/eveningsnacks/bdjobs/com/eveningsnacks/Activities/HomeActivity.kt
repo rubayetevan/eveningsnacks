@@ -85,6 +85,9 @@ class HomeActivity : AppCompatActivity(), Communicator {
             sessionManager?.getUserDetails()?.get(SessionManagerProperties.KEY_USER_ID.toString()) == "uqVVrStVaJc67YLlE8h5MnmlDY53" -> {
 
             }
+            sessionManager?.getUserDetails()?.get(SessionManagerProperties.KEY_USER_ID.toString()) == "rr1e1IZbzzguQ1TwnncCU0h9ETX2" -> {
+
+            }
 
             else -> {
                 bottomNavigation.menu.removeItem(R.id.allOrders)

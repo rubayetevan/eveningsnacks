@@ -1,5 +1,6 @@
 package eveningsnacks.bdjobs.com.eveningsnacks.Fragments
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -22,6 +23,7 @@ class MyOrderFragment : Fragment() {
 
     private var rootView: View? = null
     private var communicator: Communicator? = null
+    lateinit var sessionManager: SessionManager
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -32,6 +34,12 @@ class MyOrderFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         communicator = activity as Communicator
+        sessionManager = SessionManager(activity!!)
+        if (sessionManager?.getUserDetails()?.get(SessionManagerProperties.KEY_USER_ID.toString()) == "56mbpmXT0aOsn5JaY3XD7i5NSY62") {
+            radioButton5.visibility = View.VISIBLE
+        } else {
+            radioButton5.visibility = View.GONE
+        }
     }
 
     override fun onResume() {
@@ -63,6 +71,7 @@ class MyOrderFragment : Fragment() {
                 radioButton2.text = alternateMenu1
                 radioButton3.text = alternateMenu2
                 radioButton4.text = alternateMenu3
+                radioButton5.text = "Deshi Murgir Dim"
 
                 orderBTN.onClick {
                     val checkedRadioButtonId = radioGroup.checkedRadioButtonId
@@ -72,6 +81,7 @@ class MyOrderFragment : Fragment() {
                         R.id.radioButton2 -> menuItem = alternateMenu1
                         R.id.radioButton3 -> menuItem = alternateMenu2
                         R.id.radioButton4 -> menuItem = alternateMenu3
+                        R.id.radioButton5 -> menuItem = "Deshi Murgir Dim"
                     }
                     if (menuItem != null) {
                         communicator?.makeOrder(menuItem)
@@ -89,7 +99,7 @@ class MyOrderFragment : Fragment() {
                 val sessionManager = SessionManager(activity!!)
                 val userId = sessionManager?.getUserDetails()?.get(SessionManagerProperties.KEY_USER_ID.toString())!!
                 deleteOrderBTN.onClick {
-                    alert( "Are you sure to delete your order?") {
+                    alert("Are you sure to delete your order?") {
                         yesButton { communicator?.deleteOrder(userId, MyOrderFragment::class.java.simpleName) }
                         noButton {}
                     }.show()
