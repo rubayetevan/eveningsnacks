@@ -1,5 +1,8 @@
 package eveningsnacks.bdjobs.com.eveningsnacks.API
 
+import com.google.gson.GsonBuilder
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -27,13 +30,41 @@ interface ApiService {
     fun deleteOrder(@Query("userid") userId: String): Call<OrderModel>
 
     companion object Factory {
+
         private const val baseUrl = "http://172.16.9.235/snacks/"
+
+        @Volatile
+        private var retrofit: Retrofit? = null
+
+        @Synchronized
         fun create(): ApiService {
-            val retrofit = Retrofit.Builder()
-                    .baseUrl(baseUrl)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-            return retrofit.create(ApiService::class.java)
+
+            retrofit ?: synchronized(this) {
+                retrofit = buildRetrofit()
+            }
+
+            return retrofit?.create(ApiService::class.java)!!
         }
+
+        private fun buildRetrofit(): Retrofit {
+
+            val gson = GsonBuilder()
+                    .setLenient()
+                    .create()
+
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+
+            val okHttpClient = OkHttpClient.Builder()
+                    .addInterceptor(interceptor)
+                    .build()
+
+            return Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .client(okHttpClient)
+                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .build()
+        }
+
     }
 }
