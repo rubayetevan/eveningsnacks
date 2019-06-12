@@ -14,9 +14,6 @@ interface ApiService {
     @GET("viewsnacks.asp")
     fun getOrderList(): Call<OrderListModel>
 
-    @GET("getweekno.asp")
-    fun getWeekNo(): Call<WeekNoModel>
-
     @GET("getmenu.asp")
     fun getMenu(): Call<MenuModel>
 
@@ -30,7 +27,7 @@ interface ApiService {
     fun deleteOrder(@Query("userid") userId: String): Call<OrderModel>
 
     companion object Factory {
-        private const val baseUrl = "http://172.16.9.250/testprojects/snacks/"
+        private const val baseUrl = "http://172.16.9.235/snacks/"
         fun create(): ApiService {
             val retrofit = Retrofit.Builder()
                     .baseUrl(baseUrl)
